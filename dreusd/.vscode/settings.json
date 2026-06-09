@@ -1,0 +1,26 @@
+{
+  "solidity.remappings": [
+    "forge-std/=lib/lz-address-book/lib/forge-std/src/",
+    "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "@chainlink/contracts/=lib/foundry-chainlink-toolkit/lib/chainlink-brownie-contracts/contracts/src/",
+    "@layerzerolabs/oft-evm/=lib/devtools/packages/oft-evm/",
+    "@layerzerolabs/oapp-evm/=lib/devtools/packages/oapp-evm/",
+    "@layerzerolabs/lz-evm-protocol-v2/=lib/layerzero-v2/packages/layerzero-v2/evm/protocol",
+    "@layerzerolabs/lz-evm-messagelib-v2/=lib/layerzero-v2/packages/layerzero-v2/evm/messagelib",
+    "solidity-bytes-utils/=lib/solidity-bytes-utils/",
+    "lz-address-book/=lib/lz-address-book/src/"
+  ],
+  "solidity.includePath": [
+    "contracts",
+    "lib",    
+    "lib/lz-address-book/lib/forge-std/src",
+    "lib/openzeppelin-contracts/contracts",
+    "lib/openzeppelin-contracts-upgradeable/contracts"
+  ],  
+  "solidity.packageDefaultDependenciesDirectory": "lib",
+  "solidity.defaultCompiler": "remote",
+  "files.associations": {
+    "*.sol": "solidity"
+  }
+}
