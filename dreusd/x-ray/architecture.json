@@ -1,0 +1,39 @@
+{
+  "title": "DRE USD Architecture",
+  "nodes": [
+    {"id":"users","label":"Users","subtitle":"Minters / Stakers / Redeemers","type":"actor","row":0},
+    {"id":"operators","label":"Protocol Operators","subtitle":"Keeper / Treasury / Guardian","type":"actor","row":0},
+    {"id":"governance","label":"Governance","subtitle":"Timelock / Multisig / Upgraders","type":"actor","row":0},
+    {"id":"manager","label":"dreUSDManager","subtitle":"Minting / Withdrawal Queues","type":"protocol","row":1},
+    {"id":"token","label":"dreUSD","subtitle":"Stablecoin OFT / Compliance","type":"protocol","row":1},
+    {"id":"vault","label":"dreUSDs","subtitle":"ERC-4626 Yield Vault","type":"protocol","row":1},
+    {"id":"withdrawals","label":"Withdrawal Layer","subtitle":"NFTs / Keeper Bot / Aave Adapter","type":"protocol","row":2},
+    {"id":"rewards","label":"Rewards Distributor","subtitle":"Linear Vesting","type":"protocol","row":2},
+    {"id":"bridge","label":"OVault Bridge Layer","subtitle":"Composer / Share OFTs / Adapter","type":"protocol","row":2},
+    {"id":"custody","label":"Custody Layer","subtitle":"dreVault / Custodian Wallets","type":"protocol","row":2},
+    {"id":"chainlink","label":"Chainlink","subtitle":"Prices / Sequencer / Automation","type":"external","row":3},
+    {"id":"aave","label":"Aave V3","subtitle":"USDC Withdrawal Liquidity","type":"external","row":3},
+    {"id":"layerzero","label":"LayerZero","subtitle":"Cross-chain Messaging","type":"external","row":3},
+    {"id":"sanctions","label":"Sanctions Oracle","subtitle":"Compliance Source","type":"external","row":3}
+  ],
+  "edges": [
+    {"from":"users","to":"manager","label":"mint redeem"},
+    {"from":"users","to":"vault","label":"stake unstake"},
+    {"from":"operators","to":"manager","label":"fill configure"},
+    {"from":"governance","to":"token","label":"roles upgrades"},
+    {"from":"governance","to":"vault","label":"vault control"},
+    {"from":"manager","to":"token","label":"mint burn"},
+    {"from":"manager","to":"withdrawals","label":"queue fill"},
+    {"from":"manager","to":"custody","label":"stablecoin inflow"},
+    {"from":"vault","to":"rewards","label":"claim rewards"},
+    {"from":"vault","to":"bridge","label":"bridge shares"},
+    {"from":"withdrawals","to":"aave","label":"redeem aUSDC"},
+    {"from":"manager","to":"chainlink","label":"price conversion"},
+    {"from":"bridge","to":"layerzero","label":"cross-chain send"},
+    {"from":"token","to":"sanctions","label":"address screening"}
+  ],
+  "groups": [
+    {"label":"Core Stablecoin","nodes":["manager","token","vault"]},
+    {"label":"Operations and Distribution","nodes":["withdrawals","rewards","bridge","custody"]}
+  ]
+}

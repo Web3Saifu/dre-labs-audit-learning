@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker>
+    <style>
+      .title{font:700 26px Arial;fill:#0f172a}.node{fill:#fff;stroke:#94a3b8;stroke-width:1.5;rx:7}.protocol{stroke:#2563eb;stroke-width:3}.external{stroke:#d97706;stroke-width:3}.actor{rx:22}.label{font:700 14px Arial;fill:#0f172a;text-anchor:middle}.sub{font:11px Arial;fill:#475569;text-anchor:middle}.edge{stroke:#475569;stroke-width:1.5;fill:none;marker-end:url(#arrow)}.elabel{font:11px Arial;fill:#1e293b;text-anchor:middle}.group{fill:#eff6ff;fill-opacity:.35;stroke:#93c5fd;stroke-dasharray:5 4;rx:10}.glabel{font:700 12px Arial;fill:#1d4ed8}
+    </style>
+  </defs>
+  <rect width="1280" height="760" fill="#f8fafc"/>
+  <text x="640" y="38" class="title" text-anchor="middle">DRE USD Architecture</text>
+  <rect x="215" y="180" width="850" height="150" class="group"/><text x="230" y="200" class="glabel">Core Stablecoin</text>
+  <rect x="100" y="365" width="1080" height="150" class="group"/><text x="115" y="385" class="glabel">Operations and Distribution</text>
+  <g><rect x="130" y="75" width="220" height="58" class="node actor"/><text x="240" y="99" class="label">Users</text><text x="240" y="117" class="sub">Minters / Stakers / Redeemers</text></g>
+  <g><rect x="530" y="75" width="220" height="58" class="node actor"/><text x="640" y="99" class="label">Protocol Operators</text><text x="640" y="117" class="sub">Keeper / Treasury / Guardian</text></g>
+  <g><rect x="930" y="75" width="220" height="58" class="node actor"/><text x="1040" y="99" class="label">Governance</text><text x="1040" y="117" class="sub">Timelock / Multisig / Upgraders</text></g>
+  <g><rect x="250" y="225" width="220" height="70" class="node protocol"/><text x="360" y="253" class="label">dreUSDManager</text><text x="360" y="273" class="sub">Minting / Withdrawal Queues</text></g>
+  <g><rect x="530" y="225" width="220" height="70" class="node protocol"/><text x="640" y="253" class="label">dreUSD</text><text x="640" y="273" class="sub">Stablecoin OFT / Compliance</text></g>
+  <g><rect x="810" y="225" width="220" height="70" class="node protocol"/><text x="920" y="253" class="label">dreUSDs</text><text x="920" y="273" class="sub">ERC-4626 Yield Vault</text></g>
+  <g><rect x="130" y="410" width="220" height="70" class="node protocol"/><text x="240" y="438" class="label">Withdrawal Layer</text><text x="240" y="458" class="sub">NFTs / Keeper / Aave Adapter</text></g>
+  <g><rect x="400" y="410" width="220" height="70" class="node protocol"/><text x="510" y="438" class="label">Rewards Distributor</text><text x="510" y="458" class="sub">Linear Vesting</text></g>
+  <g><rect x="670" y="410" width="220" height="70" class="node protocol"/><text x="780" y="438" class="label">OVault Bridge Layer</text><text x="780" y="458" class="sub">Composer / Share OFTs / Adapter</text></g>
+  <g><rect x="940" y="410" width="220" height="70" class="node protocol"/><text x="1050" y="438" class="label">Custody Layer</text><text x="1050" y="458" class="sub">dreVault / Custodian Wallets</text></g>
+  <g><rect x="90" y="610" width="220" height="65" class="node external"/><text x="200" y="637" class="label">Chainlink</text><text x="200" y="656" class="sub">Prices / Sequencer / Automation</text></g>
+  <g><rect x="390" y="610" width="220" height="65" class="node external"/><text x="500" y="637" class="label">Aave V3</text><text x="500" y="656" class="sub">USDC Withdrawal Liquidity</text></g>
+  <g><rect x="690" y="610" width="220" height="65" class="node external"/><text x="800" y="637" class="label">LayerZero</text><text x="800" y="656" class="sub">Cross-chain Messaging</text></g>
+  <g><rect x="990" y="610" width="220" height="65" class="node external"/><text x="1100" y="637" class="label">Sanctions Oracle</text><text x="1100" y="656" class="sub">Compliance Source</text></g>
+  <path d="M240 133 L330 225" class="edge"/><text x="270" y="178" class="elabel">mint redeem</text>
+  <path d="M300 133 L850 225" class="edge"/><text x="580" y="170" class="elabel">stake unstake</text>
+  <path d="M640 133 L390 225" class="edge"/><text x="520" y="177" class="elabel">fill configure</text>
+  <path d="M1040 133 L700 225" class="edge"/><text x="870" y="177" class="elabel">roles upgrades</text>
+  <path d="M470 260 L530 260" class="edge"/><text x="500" y="248" class="elabel">mint burn</text>
+  <path d="M360 295 L250 410" class="edge"/><text x="285" y="350" class="elabel">queue fill</text>
+  <path d="M420 295 L1010 410" class="edge"/><text x="725" y="348" class="elabel">custody inflow</text>
+  <path d="M880 295 L550 410" class="edge"/><text x="720" y="348" class="elabel">claim rewards</text>
+  <path d="M940 295 L800 410" class="edge"/><text x="880" y="348" class="elabel">bridge shares</text>
+  <path d="M240 480 L470 610" class="edge"/><text x="340" y="548" class="elabel">redeem aUSDC</text>
+  <path d="M300 295 L210 610" class="edge"/><text x="238" y="500" class="elabel">price conversion</text>
+  <path d="M780 480 L800 610" class="edge"/><text x="820" y="548" class="elabel">cross-chain send</text>
+  <path d="M680 295 L1080 610" class="edge"/><text x="925" y="500" class="elabel">address screening</text>
+</svg>
