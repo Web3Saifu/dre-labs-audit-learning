@@ -56,6 +56,7 @@ contract dreVault is IdreVault, Ownable {
         IERC20(token).safeTransfer(forwardVault, amount);
         emit UsdcForwarded(forwardVault, amount);
     }
+    
 
     /// @inheritdoc IdreVault
     function recoverToken(address token_, address recipient) external onlyOwner {
