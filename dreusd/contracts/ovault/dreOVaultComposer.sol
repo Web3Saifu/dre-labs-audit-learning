@@ -81,7 +81,7 @@ contract dreOVaultComposer is VaultComposerSync, Ownable {
         _deposit(_depositor, _assetAmount);
         uint256 postShareBalance = IERC20(SHARE_ERC20).balanceOf(address(this));
 
-        uint256 shareAmountReceived = postShareBalance - preShareBalance;
+        uint256 shareAmountReceived = postShareBalance - preShareBalance;//?
         
         // Store the original minAmountLD for OFT slippage protection
         // This represents the user's minimum expectation for the final bridged amount
